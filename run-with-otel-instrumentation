@@ -144,9 +144,9 @@ function set_env_new()
   putenv("OTEL_PHP_AUTOLOAD_ENABLED=true");
   putenv("OTEL_TRACES_EXPORTER=otlp");
   putenv("OTEL_EXPORTER_OTLP_PROTOCOL=http/json");
-  putenv("OTEL_PROPAGATORS=baggage,tracecontext,b3");
+  putenv("OTEL_PROPAGATORS=baggage,tracecontext");
 
-  if (empty("OTEL_SERVICE_NAME")) {
+  if (empty(getenv("OTEL_SERVICE_NAME"))) {
     $service_name = getenv("MW_AGENT_SERVICE");
     if (empty($service_name))
       $service_name = "service-" . getmypid();
@@ -154,7 +154,7 @@ function set_env_new()
     putenv("OTEL_SERVICE_NAME=" . $service_name);
   }
 
-  if (empty("OTEL_EXPORTER_OTLP_ENDPOINT")) {
+  if (empty(getenv("OTEL_EXPORTER_OTLP_ENDPOINT"))) {
     putenv("OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:9320");
   }
 }

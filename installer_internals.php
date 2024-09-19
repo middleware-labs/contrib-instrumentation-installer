@@ -97,8 +97,9 @@ function get_auto_packages(): array
   $results = $json->{"results"};
   $opentelemetry_auto_packages = array();
   foreach ($results as $package) {
-    if ($package->name === 'open-telemetry/opentelemetry-instrumentation-installer') {
+    if ($package->name === 'open-telemetry/opentelemetry-instrumentation-installer' || $package->name === 'open-telemetry/opentelemetry-auto-yii' || $package->name === 'open-telemetry/opentelemetry-auto-mongodb') {
       //do not install self
+      // TODO: r & d on yii framework package
       continue;
     }
     array_push($opentelemetry_auto_packages, $package->name);
