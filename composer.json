@@ -1,9 +1,17 @@
 {
-  "name": "open-telemetry/opentelemetry-instrumentation-installer",
-  "description": "OpenTelemetry auto-instrumentation installer",
-  "keywords": ["opentelemetry", "otel", "open-telemetry", "tracing", "installer", "instrumentation"],
+  "name": "middleware-labs/php-instrumentation-installer",
+  "description": "OpenTelemetry based php auto-instrumentation installer",
+  "keywords": [
+    "opentelemetry",
+    "otel",
+    "open-telemetry",
+    "tracing",
+    "installer",
+    "instrumentation",
+    "php"
+  ],
   "type": "library",
-  "homepage": "https://opentelemetry.io/docs/php",
+  "homepage": "https://docs.middleware.io/apm-configuration/php",
   "readme": "./README.md",
   "license": "Apache-2.0",
   "require": {},
